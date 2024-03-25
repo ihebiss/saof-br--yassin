@@ -1,6 +1,7 @@
 package com.example.carecareforeldres.auth;
 
 
+import com.example.carecareforeldres.Entity.Homeless;
 import com.example.carecareforeldres.Entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -52,6 +53,11 @@ public class AuthenticationController {
   @GetMapping("/current/user/{id}/{role}")
   public Optional<?> getCurrentUsersWithRole(@PathVariable Integer id,@PathVariable String role) {
     return service.getCurrentUsersWithRole(id,role);
+  }
+  @GetMapping("/allUser")
+  public List<User> finduserback () {
+    List<User> uu = service.findUserback();
+    return uu;
   }
 
 

@@ -2,13 +2,11 @@ package com.example.carecareforeldres.auth;
 
 
 
+import com.example.carecareforeldres.Entity.Homeless;
 import com.example.carecareforeldres.Entity.Role;
 import com.example.carecareforeldres.Entity.TypeRole;
 import com.example.carecareforeldres.Entity.User;
-import com.example.carecareforeldres.Repository.CuisinierRepository;
-import com.example.carecareforeldres.Repository.MedecinRepository;
-import com.example.carecareforeldres.Repository.PatientRepository;
-import com.example.carecareforeldres.Repository.UserRepository;
+import com.example.carecareforeldres.Repository.*;
 import com.example.carecareforeldres.config.JwtService;
 import com.example.carecareforeldres.tfa.TwoFactorAuthenticationService;
 import com.example.carecareforeldres.token.Token;
@@ -33,11 +31,13 @@ import java.util.*;
 
 
 public class AuthenticationService {
-    private final UserRepository repository;
-    private final MedecinRepository Medecinrepository;
-    private final PatientRepository patientRepository;
-    private final CuisinierRepository cuisinierRepository;
-
+        private final UserRepository repository;
+        private final MedecinRepository Medecinrepository;
+        private final PatientRepository patientRepository;
+        private final CuisinierRepository cuisinierRepository;
+        private final VisiteurRepository visiteurRepository;
+         private final HomelessRepository homelessRepository;
+         private final DonateurRepository donateurRepository;
   private final TokenRepository tokenRepository;
   private final PasswordEncoder passwordEncoder;
   private final JwtService jwtService;
@@ -278,15 +278,15 @@ public class AuthenticationService {
             case "PATIENT":
                 return patientRepository.findPatientByUser(id);
             case "VISITEUR":
-                return null;
+                return visiteurRepository.findVisiteurByUser(id);
             case "ADMIN":
                 return null;
             case "DONATEUR":
-                return null;
+                return donateurRepository.findDonateurByUser(id);
             case "CUISINIER":
                 return cuisinierRepository.findCuisinierByUser(id);
                 case "HOMELESS":
-                    return null;
+                    return homelessRepository.findHomelessByUser(id);
             case "ORGANISATEUR":
                 return null;
             default:
@@ -294,5 +294,9 @@ public class AuthenticationService {
         }
 
     }
+
+public  List<User> findUserback(){return  repository.findAll();}
+
 }
+
 
