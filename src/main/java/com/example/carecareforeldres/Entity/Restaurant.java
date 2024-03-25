@@ -22,9 +22,9 @@ public class Restaurant {
     private String nomResto;
     private String address;
     private String image;
-    private int tel;
+    private Integer tel;
 
-    private boolean status_ouv;
+    private Boolean status_ouv;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="restaurant")
     @JsonIgnore

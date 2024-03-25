@@ -21,7 +21,7 @@ public class Medicament {
     private String nomMed;
     private String image;
     private String DescMed;
-    private float prixMed;
+    private Float prixMed;
     private Date dateMed;//date l'ajout plat délai
     @Enumerated(EnumType.STRING)
     private CatMedicament CatMedicament;

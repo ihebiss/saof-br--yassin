@@ -24,16 +24,16 @@ public class Aide implements Serializable {
 
     private String description;
 
-    private float duree;
+    private Float duree;
 
-    private float montant;
+    private Float montant;
 
 
-    private int quantiteClothes;
+    private Integer quantiteClothes;
     private String typeMedicament;
-    private int quantiteMedication;
+    private Integer quantiteMedication;
 
-    private int surface;
+    private Integer surface;
     private String address;
 
     @Enumerated(EnumType.STRING)

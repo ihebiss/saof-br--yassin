@@ -22,9 +22,9 @@ public class Ingredient {
     private Integer idIngredient;
 
     private String nomIngredient;
-    private float calorie;
-    private int quantite;
-    private boolean consommable;
+    private Float calorie;
+    private Integer quantite;
+    private Boolean consommable;
     private LocalDateTime dateAjout;//date l'ajout plat délai
 
 

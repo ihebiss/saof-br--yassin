@@ -24,8 +24,8 @@ public class Patient implements Serializable {
     @Enumerated(EnumType.STRING)
     private TypePatient typePatient;
     private Boolean archiver;
-    private float poid;
-    private float longueur;
+    private Float poid;
+    private Float longueur;
     private Integer user;
     private LocalDate dateDeNaissance;
     @Enumerated(EnumType.STRING)

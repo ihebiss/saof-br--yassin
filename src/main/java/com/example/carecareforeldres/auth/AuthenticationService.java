@@ -5,6 +5,7 @@ package com.example.carecareforeldres.auth;
 import com.example.carecareforeldres.Entity.Role;
 import com.example.carecareforeldres.Entity.TypeRole;
 import com.example.carecareforeldres.Entity.User;
+import com.example.carecareforeldres.Repository.CuisinierRepository;
 import com.example.carecareforeldres.Repository.MedecinRepository;
 import com.example.carecareforeldres.Repository.PatientRepository;
 import com.example.carecareforeldres.Repository.UserRepository;
@@ -35,6 +36,7 @@ public class AuthenticationService {
     private final UserRepository repository;
     private final MedecinRepository Medecinrepository;
     private final PatientRepository patientRepository;
+    private final CuisinierRepository cuisinierRepository;
 
   private final TokenRepository tokenRepository;
   private final PasswordEncoder passwordEncoder;
@@ -281,6 +283,8 @@ public class AuthenticationService {
                 return null;
             case "DONATEUR":
                 return null;
+            case "CUISINIER":
+                return cuisinierRepository.findCuisinierByUser(id);
                 case "HOMELESS":
                     return null;
             case "ORGANISATEUR":
